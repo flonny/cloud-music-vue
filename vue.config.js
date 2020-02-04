@@ -6,7 +6,7 @@ function addStyleResource(rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/variables.styl'),
+        path.resolve(__dirname, './src/assets/import.styl'),
       ],
     });
 }
