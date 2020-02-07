@@ -1,17 +1,23 @@
 <template>
-  <div>
-    <Slider :banner-list="bannerList" />
-    <recommend-list :recommend-list="recommendList" />
+  <div class="content">
+    <Scroll class="list">
+      <div>
+        <Slider :banner-list="bannerList" />
+        <recommend-list :recommend-list="recommendList" />
+      </div>
+    </Scroll>
   </div>
 </template>
 <script>
 import Slider from '../../components/slider/index.vue';
 import RecommendList from '../../components/recommendList/index.vue';
+import Scroll from '../../components/scroll/index.vue';
 
 export default {
   components: {
     Slider,
     RecommendList,
+    Scroll,
   },
   data() {
     return {
@@ -30,3 +36,11 @@ export default {
   },
 };
 </script>
+<style lang="stylus" scoped>
+.content{
+  position: fixed;
+  top: 94px;
+  bottom: 0;
+  width: 100%;
+}
+</style>

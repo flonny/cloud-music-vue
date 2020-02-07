@@ -71,6 +71,10 @@ module.exports = {
 >
 > Notify: swiper init need vue Doms mounted in true Dom
 
+```javascript
+npm install swiper --save
+```
+
 ```vue
 <template>
   <div class="SliderContainer">
@@ -137,5 +141,11 @@ export default {
 <style lang="stylus" >
 @import './style'
 </style>
+```
+
+> Created better scroll component
+
+```javascript
+npm install better-scroll@next --save
 ```
 
