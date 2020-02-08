@@ -1,5 +1,5 @@
 # 笔记
-
+> clone https://github.com/sanyuan0704/react-cloud-music change react project to vue
 ```javascript
 ./node_modules/.bin/eslint --init
 ```
