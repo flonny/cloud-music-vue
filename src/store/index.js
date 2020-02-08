@@ -1,15 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import recommendStore from '../application/Recommend/store';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+  strict: true,
+
+  state: {},
+  mutations: {},
+  actions: {},
+  getters: {},
   modules: {
-  }
-})
+    recommendStore,
+  },
+});
