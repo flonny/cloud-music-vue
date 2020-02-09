@@ -1,6 +1,9 @@
 <template>
   <div class="content">
-    <Scroll class="list">
+    <Scroll
+      class="list"
+      :data="recommendList"
+    >
       <div>
         <Slider :banner-list="bannerList" />
         <recommend-list :recommend-list="recommendList" />
