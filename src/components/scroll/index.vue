@@ -42,7 +42,7 @@ export default {
        */
     listenScroll: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     /**
        * 列表的数据
@@ -90,9 +90,7 @@ export default {
   },
   mounted() {
     // 保证在DOM渲染完毕后初始化better-scroll
-    setTimeout(() => {
-      this.initScroll();
-    }, 20);
+    this.initScroll();
   },
   methods: {
     initScroll() {
@@ -101,9 +99,13 @@ export default {
       }
       // better-scroll的初始化
       this.scroll = new BScroll(this.$refs.wrapper, {
-        probeType: this.probeType,
-        click: this.click,
-        scrollX: this.scrollX,
+        probeType: 3,
+        click: true,
+        scrollY: true,
+        bounce: {
+          top: true,
+          bottom: true,
+        },
       });
 
       // 是否派发滚动事件
