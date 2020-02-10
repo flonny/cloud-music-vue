@@ -13,7 +13,6 @@ Vue.use(VueLazyload, {
   preLoad: 1.3,
   attempt: 1,
   dispatchEvent: true,
-  listenEvents: ['scroll'],
 });
 new Vue({
   store,
