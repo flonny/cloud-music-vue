@@ -16,7 +16,7 @@ import { mapActions, mapGetters } from 'vuex';
 
 import Slider from '../../components/slider/index.vue';
 import RecommendList from '../../components/recommendList/index.vue';
-import Scroll from '../../components/scroll/index.vue';
+import Scroll from '../../baseUI/scroll/index.vue';
 
 export default {
   components: {
