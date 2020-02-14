@@ -38,8 +38,12 @@ export default {
     ]),
   },
   created() {
-    this.getBannerList();
-    this.getRecommendList();
+    if (this.bannerList.length === 0) {
+      this.getBannerList();
+    }
+    if (this.recommendList.length === 0) {
+      this.getRecommendList();
+    }
   },
   methods: {
     ...mapActions('recommendStore', ['getBannerList', 'getRecommendList']),

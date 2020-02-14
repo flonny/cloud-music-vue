@@ -14,6 +14,14 @@ import BScroll from 'better-scroll';
 
 export default {
   props: {
+    direction: {
+      type: String,
+      default: 'vertical',
+      validator(value) {
+        // 这个值必须匹配下列字符串中的一个
+        return ['vertical', 'horizental'].indexOf(value) !== -1;
+      },
+    },
     /**
        * 1 滚动的时候会派发scroll事件，会截流。
        * 2 滚动的时候实时派发scroll事件，不会截流。
@@ -29,13 +37,6 @@ export default {
     click: {
       type: Boolean,
       default: true,
-    },
-    /**
-       * 是否开启横向滚动
-       */
-    scrollX: {
-      type: Boolean,
-      default: false,
     },
     /**
        * 是否派发滚动事件
@@ -101,7 +102,8 @@ export default {
       this.scroll = new BScroll(this.$refs.wrapper, {
         probeType: 3,
         click: true,
-        scrollY: true,
+        scrollX: true,
+        // scrollY: this.direction === 'vertical',
         bounce: {
           top: true,
           bottom: true,
