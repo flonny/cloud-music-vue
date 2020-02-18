@@ -11,6 +11,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import Horizen from '../../baseUI/horizen-item/index.vue';
 import { categoryTypes, alphaTypes } from '../../api/config';
 
@@ -21,6 +22,15 @@ export default {
       categoryTypes,
       alphaTypes,
     };
+  },
+  computed: {
+    ...mapGetters('singerStore', [
+      'singerList',
+      'enterLoading',
+      'pullUpLoading',
+      'pullDownLoading',
+      'pageCount',
+    ]),
   },
 };
 </script>
