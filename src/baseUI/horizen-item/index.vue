@@ -3,9 +3,7 @@
     ref="horizenScroll"
     direction="horizental"
   >
-    <div
-      ref="category"
-    >
+    <div ref="category">
       <div class="list">
         <span>{{ title }}</span>
         <span
@@ -13,6 +11,7 @@
           :key="item.key"
           class="list-item"
           :class="{'selected':(oldVal ===item.key)}"
+          @click="handleClick(item.key)"
         >{{ item.name }}</span>
       </div>
     </div>
@@ -33,7 +32,9 @@ export default {
   },
   methods: {
     handleClick(val) {
-      this.$emit('handleClick', val);
+      if (val !== this.oldVal) {
+        this.$emit('change', val);
+      }
     },
     initHorizen() {
       const categoryDOM = this.$refs.category;
